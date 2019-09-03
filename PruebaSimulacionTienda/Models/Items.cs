@@ -1,31 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PruebaSimulacionTienda.Models
 {
     public class Items
     {
-        String id;
+        private String id;
+
         public String Id
         {
             get { return id; }
             set { id = value; }
         }
-        String nombre;
+
+        private String nombre;
+
         public String Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
-        Double precio;
+
+        private Double precio;
+
         public Double Precio
         {
             get { return precio; }
             set { precio = value; }
         }
-        String estado;
+
+        private String estado;
+
         public String Estado
         {
             get { return estado; }
