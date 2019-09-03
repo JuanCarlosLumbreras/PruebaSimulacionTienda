@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PruebaSimulacionTienda.Models
 {
     public class RegistroItem
     {
-        List<Items> listaItems;
-        static RegistroItem ItemRegistro = null;
+        private List<Items> listaItems;
+        private static RegistroItem ItemRegistro = null;
 
         private RegistroItem()
         {
             listaItems = new List<Items>();
         }
+
         public static RegistroItem getInstace()
         {
-            if(ItemRegistro == null)
+            if (ItemRegistro == null)
             {
                 ItemRegistro = new RegistroItem();
                 return ItemRegistro;
@@ -35,7 +35,7 @@ namespace PruebaSimulacionTienda.Models
         public String Borrar(String id)
         {
             String mensaje = "No se pudo Borrar";
-            for(int i=0; i<listaItems.Count; i++)
+            for (int i = 0; i < listaItems.Count; i++)
             {
                 Items it = listaItems.ElementAt(i);
                 if (it.Id.Equals(id))
@@ -46,17 +46,18 @@ namespace PruebaSimulacionTienda.Models
             }
             return mensaje;
         }
+
         public List<Items> VerItems()
         {
             return listaItems;
         }
 
-        public List<Tuple<string,double>> VerNombresItems()
+        public List<Tuple<string, double>> VerNombresItems()
         {
-            List<Tuple<string,double>> listaNombres = new List<Tuple<string, double>>();
-            foreach(Items i in listaItems)
+            List<Tuple<string, double>> listaNombres = new List<Tuple<string, double>>();
+            foreach (Items i in listaItems)
             {
-                listaNombres.Add(new Tuple<String, double>(i.Nombre,i.Precio));
+                listaNombres.Add(new Tuple<String, double>(i.Nombre, i.Precio));
             }
             return listaNombres;
         }
@@ -75,6 +76,5 @@ namespace PruebaSimulacionTienda.Models
             }
             return mensaje;
         }
-
     }
 }

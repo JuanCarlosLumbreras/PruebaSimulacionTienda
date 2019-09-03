@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PruebaSimulacionTienda.Models;
+using System;
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,7 +11,6 @@ namespace PruebaSimulacionTienda.Controllers
     [ApiController]
     public class VisualizarController : Controller
     {
-
         [HttpGet]
         public List<Items> VerTodosItems()
         {
@@ -21,11 +18,9 @@ namespace PruebaSimulacionTienda.Controllers
         }
 
         [HttpGet("VerNombres")]
-
-        public List<Tuple<String,double>> VerNombresItems()
+        public List<Tuple<String, double>> VerNombresItems()
         {
             return RegistroItem.getInstace().VerNombresItems();
         }
-        
     }
 }
